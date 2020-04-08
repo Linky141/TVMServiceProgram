@@ -1,0 +1,24 @@
+<TextBox Style="{StaticResource RegularTextBox1}" x:Name="tbx_godzinaPrzyjecia" HorizontalAlignment="Left" Height="23" Margin="1054,422,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" KeyDown="Tbx_godzinaPrzyjecia_KeyDown"/>
+
+ private void Tbx_godzinaPrzyjecia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (tbx_godzinaPrzyjecia.Text.Length <= 4)
+            {
+                if ((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)) {
+                    if (tbx_godzinaPrzyjecia.Text.Length == 2)
+                    {
+                        tbx_godzinaPrzyjecia.Text += ":";
+                        tbx_godzinaPrzyjecia.CaretIndex = tbx_godzinaPrzyjecia.Text.Length;
+                    }
+                }
+                else e.Handled = true;
+            }
+            else e.Handled = true;
+        }
+
+
+
+
+
+
+

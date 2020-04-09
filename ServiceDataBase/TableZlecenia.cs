@@ -33,6 +33,10 @@ namespace ServiceDataBase
             return table[number];
         }
 
+        public void addRow(RowZlecenia val)
+        {
+            table.Add(val);
+        }
         
 
 

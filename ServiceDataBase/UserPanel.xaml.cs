@@ -102,7 +102,7 @@ namespace ServiceDataBase
 
             lbl_clock.Content = d.ToString("HH:mm");
             lbl_clockSeconds.Content = d.ToString("ss");
-            lbl_clockDate.Content = d.ToString("dd - MM - yyyy");
+            dp_date.SelectedDate = d.Date;
             lbl_clockDateDayOfWeek.Content = d.ToString("dddd");
         }
 

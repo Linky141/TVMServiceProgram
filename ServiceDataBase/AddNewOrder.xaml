@@ -16,7 +16,7 @@
         mc:Ignorable="d"
         Title="AddNewOrder" Height="720" Width="1280">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="108,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="tbx_numerZlecenia" HorizontalAlignment="Left" Height="23" Margin="108,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
         <Label Content="Numer zlecenia" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top"/>
         <Label  Content="Rodzaj naprawy" HorizontalAlignment="Left" Margin="912,41,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbx_nazwisko" HorizontalAlignment="Left" Height="23" Margin="1014,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
@@ -25,7 +25,7 @@
         <TextBox  x:Name="tbx_kodPocztowy" HorizontalAlignment="Left" Height="23" Margin="1027,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
         <Label Content="Kod i miejscowość" HorizontalAlignment="Left" Margin="858,244,0,0" VerticalAlignment="Top"/>
         <TextBox  x:Name="tbx_ulica" HorizontalAlignment="Left" Height="23" Margin="1014,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Ulica i numer" HorizontalAlignment="Left" Margin="916,271,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adres" HorizontalAlignment="Left" Margin="916,275,0,0" VerticalAlignment="Top"/>
         <TextBox  x:Name="tbx_telefon" HorizontalAlignment="Left" Height="23" Margin="1014,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label   Content="Telefon" HorizontalAlignment="Left" Margin="916,302,0,0" VerticalAlignment="Top"/>
         <TextBox  x:Name="tbx_nip" HorizontalAlignment="Left" Height="23" Margin="1018,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
@@ -34,28 +34,29 @@
         <Label   Content="Marka" HorizontalAlignment="Left" Margin="916,128,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbx_ModelSprzetu" HorizontalAlignment="Left" Height="23" Margin="1018,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label   Content="Model" HorizontalAlignment="Left" Margin="915,169,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="344,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_numerFabryczny" HorizontalAlignment="Left" Height="23" Margin="344,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label   Content="Numer fabryczny" HorizontalAlignment="Left" Margin="241,15,0,0" VerticalAlignment="Top"/>
-        <TextBox  HorizontalAlignment="Left" Height="23" Margin="344,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_uwagi"  HorizontalAlignment="Left" Height="23" Margin="344,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label   Content="uwagi" HorizontalAlignment="Left" Margin="241,46,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="344,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_usterka" HorizontalAlignment="Left" Height="23" Margin="344,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label   Content="usterka" HorizontalAlignment="Left" Margin="241,83,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbx_zaliczka" HorizontalAlignment="Left" Height="23" Margin="1027,462,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label   Content="Zaliczka" HorizontalAlignment="Left" Margin="924,462,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbx_rodzajSprzetu" HorizontalAlignment="Left" Margin="1019,83,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cbx_markaSprzetu" HorizontalAlignment="Left" Margin="1019,132,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cbx_rodzajNaprawy" HorizontalAlignment="Left" Margin="1010,45,0,0" VerticalAlignment="Top" Width="120"/>
-        <CheckBox  Content="Przewód zasilający" HorizontalAlignment="Left" Margin="10,293,0,0" VerticalAlignment="Top" Style="{DynamicResource MaterialDesignLightCheckBox}"/>
-        <CheckBox  Content="Pilot" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top"/>
-        <CheckBox  Content="Podstawa" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top"/>
-        <CheckBox  Content="Wieszak" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top"/>
-        <CheckBox  Content="Opakowanie" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_dodaj"  Content="Dodaj" HorizontalAlignment="Left" Margin="15,443,0,0" VerticalAlignment="Top" Width="75"/>
+        <CheckBox  x:Name="chkbx_przewodZasilajacy" Content="Przewód zasilający" HorizontalAlignment="Left" Margin="10,293,0,0" VerticalAlignment="Top" Style="{DynamicResource MaterialDesignLightCheckBox}"/>
+        <CheckBox  x:Name="chkbx_pilot"  Content="Pilot" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top"/>
+        <CheckBox    x:Name="chkbx_podstawa" Content="Podstawa" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top"/>
+        <CheckBox   x:Name="chkbx_wieszak" Content="Wieszak" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top"/>
+        <CheckBox   x:Name="chkbx_opakowanie" Content="Opakowanie" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_dodaj"  Content="Dodaj" HorizontalAlignment="Left" Margin="15,443,0,0" VerticalAlignment="Top" Width="75" Click="Btn_dodaj_Click"/>
         <Button x:Name="btn_anuluj"  Content="Anuluj" HorizontalAlignment="Left" Margin="15,468,0,0" VerticalAlignment="Top" Width="75" Click="Btn_anuluj_Click"/>
         <Label   Content="Status" HorizontalAlignment="Left" Margin="907,10,0,0" VerticalAlignment="Top"/>
         <ComboBox  x:Name="cbx_status" HorizontalAlignment="Left" Margin="954,10,0,0" VerticalAlignment="Top" Width="120"/>
 
         <Label   Content="PLN" HorizontalAlignment="Left" Margin="1152,462,0,0" VerticalAlignment="Top"/>
+        <CheckBox   x:Name="chkbx_przywoz" Content="Przywóz" HorizontalAlignment="Left" Margin="10,388,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

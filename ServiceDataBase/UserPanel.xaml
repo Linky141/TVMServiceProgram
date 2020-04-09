@@ -47,16 +47,18 @@
             <TabItem Header="Klienci">
                 <Grid />
             </TabItem>
-        </TabControl>
-        <Button x:Name="btn_logout" Content="Wyloguj [F12]" Margin="10,0,10,10" Click="btn_logout_Click" Grid.Column="1" Height="47" VerticalAlignment="Bottom" Grid.Row="1"/>
-        <Label Content="Zalogowano:" Grid.Column="1" Margin="10,0,10,62" Height="26" VerticalAlignment="Bottom"/>
-        <Label x:Name="lbl_loggedUserName" Content="---" Grid.Column="1" Margin="10,0,10,36" Height="26" VerticalAlignment="Bottom"/>
-        <Label x:Name="lbl_clock" Content="--:--"  Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
-        <TabPanel></TabPanel>
-        <Label x:Name="lbl_clockSeconds" FontFamily="Consolas"   Content="--" Grid.Column="1" HorizontalAlignment="Left" Margin="34,46,0,0" VerticalAlignment="Top" Width="25"/>
-        <Label x:Name="lbl_clockDate"    Content="---------------" Grid.Column="1" HorizontalAlignment="Left" Margin="0,70,0,0" VerticalAlignment="Top" Padding="0,0,0,0"/>
-        <Label x:Name="lbl_clockDateDayOfWeek"   Content="---------" Grid.Column="1" HorizontalAlignment="Left" Margin="0,86,0,0" VerticalAlignment="Top" Padding="0,0,0,0"/>
 
+        </TabControl>
+        <Button x:Name="btn_logout" Content="Wyloguj [F12]" Margin="10,0,10,10" Click="btn_logout_Click" Grid.Column="1" Height="47" VerticalAlignment="Bottom" Grid.Row="1" Padding="0" FontSize="12"/>
+        <Label Content="Zalogowano:" Margin="0,0,0,26" Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="105"/>
+        <Rectangle Fill="#FF282829" Height="98" Margin="0,10,10,0" StrokeThickness="2" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="95" Stroke="DarkCyan" />
+        <Label x:Name="lbl_loggedUserName" Content="---" Height="26" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="105"/>
+        <Label x:Name="lbl_clock" Content="--:--" HorizontalAlignment="Right" Margin="0,10,13,0" VerticalAlignment="Top" FontSize="35" FontFamily="Roboto" Width="89" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lbl_clockSeconds" FontFamily="Roboto"   Content="--" HorizontalAlignment="Right" Margin="0,46,13,0" VerticalAlignment="Top" Width="89" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+
+        <Label x:Name="lbl_clockDateDayOfWeek"   Content="--------" HorizontalAlignment="Right" Margin="0,86,13,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Roboto" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Width="89"/>
+        <Button x:Name="btn_settings" Content="Ustawienia" Height="26" Grid.Column="1" Margin="10,0,10,57" Padding="0" Style="{DynamicResource MaterialDesignRaisedDarkButton}" VerticalAlignment="Bottom"/>
+        <DatePicker x:Name="dp_date" HorizontalAlignment="Right" Margin="0,60,13,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="89" Focusable="False"/>
 
 
     </Grid>

@@ -10,53 +10,88 @@ namespace ServiceDataBase
     {
 
 
-        int numerZlecenia;
+        public int numerZlecenia;
 
-        string numerFabryczny;
+        public string nazwisko;
 
-        string uwagi;
+        public string status;
 
-        string usterka;
+        public double koszt;
 
-        bool przewodZasilajacy;
+        public string model;
 
-        bool pilot;
+        public string rodzajSprzetu;
 
-        bool podstawa;
+        public string marka;
 
-        bool wieszak;
+        public DateTime dataPrzyjecia;
 
-        bool opakowanie;
+        public DateTime dataRozliczenia;
 
-        string status;
+        public DateTime dataOdbioru;
 
-        string rodzajNaprawy;
+        public DateTime dataZakonczenia;
 
-        string rodzajSprzetu;
+        public double kosztRobocizny;
 
-        string marka;
+        public double kosztMaterialu;
 
-        string model;
+        public double kosztTransportu;
 
-        string nazwisko;
+        public string rodzajNaprawy;
 
-        string miejscowosc;
+        public string miejscowosc;
 
-        string kodPocztowy;
+        public string kodPocztowy;
 
-        string ulicaINumer;
+        public string adres;
 
-        int telefon;
+        public int nip;
 
-        int nip;
+        public int telefon1;
 
-        double zaliczka;
+        public int telefon2;
 
-        DateTime data;
+        public string email;
 
-        DateTime godzina;
+        public string numerFabryczny;
 
-        /*TODO: dorobić resztę pól*/
+        public DateTime godzinaPrzyjecia;
+
+        public int numerRachunku;
+
+        public double zaliczka;
+
+        public string opis;
+
+        public string uwagi;
+
+        public string user;
+
+        public bool przywoz;
+
+        public bool Zamkniete;
+
+        public bool przewodZasilajacy;
+
+        public bool pilot;
+
+        public bool podstawa;
+
+        public bool wieszak;
+
+        public bool opakowanie;
+
+        
+
+        
+
+        
+
+        
+
+
+       
 
     }
 }

@@ -24,7 +24,7 @@ namespace ServiceDataBase
          * */
         Users user;
         System.Windows.Threading.DispatcherTimer Timer = new System.Windows.Threading.DispatcherTimer();
-
+        TableZlecenia tableZlecenia = new TableZlecenia();
 
         public UserPanel(Users _user)
         {
@@ -45,13 +45,14 @@ namespace ServiceDataBase
 
         private void btn_new_Click(object sender, RoutedEventArgs e)
         {
-            AddNewOrder addNewOrder = new AddNewOrder();
+            AddNewOrder addNewOrder = new AddNewOrder(user.getLogin());
             addNewOrder.ShowDialog();
+            if (addNewOrder.getConfirmAction()) tableZlecenia.addRow(addNewOrder.getRowZlecenia());
         }
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
@@ -86,6 +87,14 @@ namespace ServiceDataBase
         /*
          * inne metody
          */
+
+        void refreshDataGird()
+        {
+            foreach(TableZlecenia val in tableZlecenia)
+            {
+
+            }
+        }
 
         private void SetUserPermissions()
         {

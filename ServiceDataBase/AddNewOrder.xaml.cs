@@ -18,7 +18,7 @@ namespace ServiceDataBase
     /// </summary>
     public partial class AddNewOrder : Window
     {
-        public AddNewOrder()
+        public AddNewOrder(string loggedUser)
         {
             InitializeComponent();
             ComboboxesItemsData comboboxesItemsData = new ComboboxesItemsData();
@@ -30,9 +30,11 @@ namespace ServiceDataBase
             cbx_rodzajSprzetu.SelectedIndex = 0;
             cbx_markaSprzetu.ItemsSource = comboboxesItemsData.FillMarkaSprzetuCombobox();
             cbx_markaSprzetu.SelectedIndex = 0;
+            this.loggedUser = loggedUser;
         }
-        public bool confirmAction = false;
-       public RowZlecenia rawRow = null;
+        private bool confirmAction = false;
+        private RowZlecenia rawRow = null;
+        string loggedUser;
 
         private void Btn_anuluj_Click(object sender, RoutedEventArgs e)
         {
@@ -46,19 +48,21 @@ namespace ServiceDataBase
             rawRow = new RowZlecenia();
 
             if (!Int32.TryParse(tbx_numerZlecenia.Text, out rawRow.numerZlecenia)) return;
+            DateTime tmp = new DateTime(0,0,0,0,0,0);
+
             rawRow.nazwisko = tbx_nazwisko.Text;
             rawRow.status = cbx_status.SelectedItem.ToString();
             rawRow.koszt = 0;
             rawRow.model = tbx_ModelSprzetu.Text;
             rawRow.rodzajSprzetu = cbx_rodzajSprzetu.SelectedItem.ToString();
             rawRow.marka = cbx_markaSprzetu.SelectedItem.ToString();
-            //rawRow.dataPrzyjecia = 
-            //rawRow.dataRozliczenia = 
-            //rawRow.dataOdbioru = 
-            //rawRow.dataZakonczenia = 
-            //rawRow.kosztRobocizny = 
-            //rawRow.kosztMaterialu = 
-            //rawRow.kosztTransportu = 
+            rawRow.dataPrzyjecia = DateTime.Now;
+            rawRow.dataRozliczenia = tmp;
+            rawRow.dataOdbioru = tmp;
+            rawRow.dataZakonczenia = tmp;
+            rawRow.kosztRobocizny = 0;
+            rawRow.kosztMaterialu = 0;
+            rawRow.kosztTransportu = 0;
             rawRow.rodzajNaprawy = cbx_rodzajNaprawy.SelectedItem.ToString();
             rawRow.miejscowosc = tbx_miejscowosc.Text;
             rawRow.kodPocztowy = tbx_kodPocztowy.Text;
@@ -68,11 +72,11 @@ namespace ServiceDataBase
             if (!Int32.TryParse(tbx_telefon2.Text, out rawRow.telefon2)) return; 
             rawRow.email = tbx_email.Text;
             rawRow.numerFabryczny = tbx_numerFabryczny.Text;
-            //rawRow.godzinaPrzyjecia = 
+            rawRow.godzinaPrzyjecia = DateTime.Now;
             rawRow.numerRachunku = "brak";
             if (!double.TryParse(tbx_zaliczka.Text, out rawRow.zaliczka)) return;
             rawRow.opis = tbx_usterka.Text;
-            //rawRow.user = wpisać zalogowanego
+            rawRow.user = loggedUser;
             rawRow.Zamkniete = false;
             rawRow.przywoz = (bool)chkbx_przywoz.IsChecked;
             rawRow.pilot = (bool)chkbx_pilot.IsChecked;
@@ -84,5 +88,8 @@ namespace ServiceDataBase
 
             this.Close();
         }
+
+        public RowZlecenia getRowZlecenia() { return rawRow; }
+        public bool getConfirmAction() { return confirmAction; }
     }
 }

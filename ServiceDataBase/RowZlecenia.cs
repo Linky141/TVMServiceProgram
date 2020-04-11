@@ -10,7 +10,7 @@ namespace ServiceDataBase
     {
 
 
-        public int numerZlecenia;
+         public int numerZlecenia;
 
         public string nazwisko;
 
@@ -58,40 +58,29 @@ namespace ServiceDataBase
 
         public DateTime godzinaPrzyjecia;
 
-        public int numerRachunku;
+        public string numerRachunku;
 
         public double zaliczka;
 
         public string opis;
 
-        public string uwagi;
-
         public string user;
-
-        public bool przywoz;
 
         public bool Zamkniete;
 
-        public bool przewodZasilajacy;
+        public bool przywoz;
 
         public bool pilot;
 
+        public bool przewodZasilajacy;
+    
         public bool podstawa;
 
         public bool wieszak;
 
         public bool opakowanie;
 
-        
-
-        
-
-        
-
-        
-
-
-       
-
+        public string uwagi;
+     
     }
 }

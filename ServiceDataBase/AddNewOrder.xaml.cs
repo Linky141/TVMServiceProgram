@@ -44,25 +44,43 @@ namespace ServiceDataBase
         {
             confirmAction = true;
             rawRow = new RowZlecenia();
+
             if (!Int32.TryParse(tbx_numerZlecenia.Text, out rawRow.numerZlecenia)) return;
-            rawRow.numerFabryczny = tbx_numerFabryczny.Text;
-            rawRow.uwagi = tbx_uwagi.Text;
-            rawRow.opis = tbx_usterka.Text;
-            rawRow.przewodZasilajacy = (bool) chkbx_przewodZasilajacy.IsChecked;
-            rawRow.pilot = (bool) chkbx_pilot.IsChecked;
-            rawRow.podstawa = (bool) chkbx_podstawa.IsChecked;
-            rawRow.wieszak = (bool) chkbx_wieszak.IsChecked;
-            rawRow.opakowanie = (bool) chkbx_opakowanie.IsChecked;
-            rawRow.przywoz = (bool) chkbx_przywoz.IsChecked;
+            rawRow.nazwisko = tbx_nazwisko.Text;
             rawRow.status = cbx_status.SelectedItem.ToString();
-            rawRow.rodzajNaprawy = cbx_rodzajNaprawy.SelectedItem.ToString();
+            rawRow.koszt = 0;
+            rawRow.model = tbx_ModelSprzetu.Text;
             rawRow.rodzajSprzetu = cbx_rodzajSprzetu.SelectedItem.ToString();
             rawRow.marka = cbx_markaSprzetu.SelectedItem.ToString();
-            rawRow.model = tbx_ModelSprzetu.Text;
-            rawRow.nazwisko = tbx_nazwisko.Text;
-            rawRow.kodPocztowy = tbx_kodPocztowy.Text;
+            //rawRow.dataPrzyjecia = 
+            //rawRow.dataRozliczenia = 
+            //rawRow.dataOdbioru = 
+            //rawRow.dataZakonczenia = 
+            //rawRow.kosztRobocizny = 
+            //rawRow.kosztMaterialu = 
+            //rawRow.kosztTransportu = 
+            rawRow.rodzajNaprawy = cbx_rodzajNaprawy.SelectedItem.ToString();
             rawRow.miejscowosc = tbx_miejscowosc.Text;
-            
+            rawRow.kodPocztowy = tbx_kodPocztowy.Text;
+            rawRow.adres = tbx_adres.Text;
+            if (!Int32.TryParse(tbx_nip.Text, out rawRow.nip)) return;
+            if (!Int32.TryParse(tbx_telefon1.Text, out rawRow.telefon1)) return;
+            if (!Int32.TryParse(tbx_telefon2.Text, out rawRow.telefon2)) return; 
+            rawRow.email = tbx_email.Text;
+            rawRow.numerFabryczny = tbx_numerFabryczny.Text;
+            //rawRow.godzinaPrzyjecia = 
+            rawRow.numerRachunku = "brak";
+            if (!double.TryParse(tbx_zaliczka.Text, out rawRow.zaliczka)) return;
+            rawRow.opis = tbx_usterka.Text;
+            //rawRow.user = wpisać zalogowanego
+            rawRow.Zamkniete = false;
+            rawRow.przywoz = (bool)chkbx_przywoz.IsChecked;
+            rawRow.pilot = (bool)chkbx_pilot.IsChecked;
+            rawRow.przewodZasilajacy = (bool)chkbx_przewodZasilajacy.IsChecked;
+            rawRow.podstawa = (bool)chkbx_podstawa.IsChecked;
+            rawRow.wieszak = (bool)chkbx_wieszak.IsChecked;
+            rawRow.opakowanie = (bool)chkbx_opakowanie.IsChecked;
+            rawRow.uwagi = tbx_uwagi.Text;
 
             this.Close();
         }

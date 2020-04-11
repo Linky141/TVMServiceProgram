@@ -10,6 +10,7 @@ namespace ServiceDataBase
     {
         private List<RowZlecenia> table = null;
 
+
         public TableZlecenia()
         {
             table = new List<RowZlecenia>();

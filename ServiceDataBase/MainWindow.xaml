@@ -13,14 +13,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceDataBase"
         mc:Ignorable="d"
-        Title="Logowanie" Height="142.21" Width="269.287" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="None">
-    <Grid >
-        <TextBox x:Name="tbx_login" HorizontalAlignment="Left" Height="23" Margin="88,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" KeyDown="tbx_login_KeyDown"  TextAlignment="Center"/>
-        <TextBox x:Name="tbx_password" HorizontalAlignment="Left" Height="23" Margin="88,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" KeyDown="tbx_password_KeyDown" TextAlignment="Center"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top"  />
-        <Label Content="Password" HorizontalAlignment="Left" Margin="21,54,0,0" VerticalAlignment="Top"  />
-        <Button x:Name="btn_login" Content="Zaloguj [Enter]" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="243" Height="41" Click="btn_login_Click"/>
-        <Button x:Name="btn_exit" Content="X" Margin="241,3,5,0" VerticalAlignment="Top" Height="22"  Click="Btn_exit_Click" Style="{DynamicResource MaterialDesignIconButton}" Width="Auto"/>
+        Title="Logowanie" Height="265.543" Width="545.287" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="None">
+    <Grid Margin="0,0,-8,-8" HorizontalAlignment="Left" Width="545" Height="266" VerticalAlignment="Bottom" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="tbx_login" HorizontalAlignment="Left" Height="42" Margin="233,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" KeyDown="tbx_login_KeyDown"  TextAlignment="Center" FontSize="24" TextChanged="tbx_login_TextChanged"/>
+        <TextBox x:Name="tbx_password" HorizontalAlignment="Left" Height="41" Margin="233,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213" KeyDown="tbx_password_KeyDown" TextAlignment="Center" FontSize="24"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="38,29,0,0" VerticalAlignment="Top" FontSize="36" Height="51" Width="96"  />
+        <Label Content="Password" Margin="38,0,233,108" VerticalAlignment="Bottom" FontSize="36" Height="51"  />
+        <Button x:Name="btn_login" Content="Zaloguj [Enter]" HorizontalAlignment="Left" Margin="38,200,0,0" VerticalAlignment="Top" Width="217" Height="41" Click="btn_login_Click" FontSize="24"/>
+        <Button x:Name="btn_exit" Content="Wyjście [Esc]" Margin="279,0,0,25" Height="41"  Click="Btn_exit_Click" Style="{DynamicResource MaterialDesignIconButton}" Width="210" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

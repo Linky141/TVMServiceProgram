@@ -93,7 +93,9 @@ namespace ServiceDataBase
             return null;
         }
 
+        private void tbx_login_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
-
+        }
     }
 }

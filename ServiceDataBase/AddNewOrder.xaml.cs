@@ -36,6 +36,23 @@ namespace ServiceDataBase
         private RowZlecenia rawRow = null;
         string loggedUser;
 
+
+        //Zapytanie przy zamykaniu okna głownego programu
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            if (MessageBox.Show("Zamknąć okno programu?", "Pytanie", MessageBoxButton.OKCancel, MessageBoxImage.Asterisk) == MessageBoxResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                return;
+            }
+            return;
+        }
+
+
         private void Btn_anuluj_Click(object sender, RoutedEventArgs e)
         {
             confirmAction = false;
@@ -47,8 +64,9 @@ namespace ServiceDataBase
             confirmAction = true;
             rawRow = new RowZlecenia();
 
-            if (!Int32.TryParse(tbx_numerZlecenia.Text, out rawRow.numerZlecenia)) return;
-            DateTime tmp = new DateTime(0,0,0,0,0,0);
+            if (!Int32.TryParse(tbx_numerZlecenia.Text, out int tmp1)) return;
+            rawRow.numerZlecenia = tmp1;
+            DateTime tmp = new DateTime();
 
             rawRow.nazwisko = tbx_nazwisko.Text;
             rawRow.status = cbx_status.SelectedItem.ToString();
@@ -67,14 +85,18 @@ namespace ServiceDataBase
             rawRow.miejscowosc = tbx_miejscowosc.Text;
             rawRow.kodPocztowy = tbx_kodPocztowy.Text;
             rawRow.adres = tbx_adres.Text;
-            if (!Int32.TryParse(tbx_nip.Text, out rawRow.nip)) return;
-            if (!Int32.TryParse(tbx_telefon1.Text, out rawRow.telefon1)) return;
-            if (!Int32.TryParse(tbx_telefon2.Text, out rawRow.telefon2)) return; 
+            if (!Int32.TryParse(tbx_nip.Text, out int tmp2)) return;
+            rawRow.nip = tmp2;
+            if (!Int32.TryParse(tbx_telefon1.Text, out int tmp3)) return;
+            rawRow.telefon1 = tmp3;
+            if (!Int32.TryParse(tbx_telefon2.Text, out int tmp4)) return;
+            rawRow.telefon2 = tmp4;
             rawRow.email = tbx_email.Text;
             rawRow.numerFabryczny = tbx_numerFabryczny.Text;
             rawRow.godzinaPrzyjecia = DateTime.Now;
             rawRow.numerRachunku = "brak";
-            if (!double.TryParse(tbx_zaliczka.Text, out rawRow.zaliczka)) return;
+            if (!double.TryParse(tbx_zaliczka.Text, out double tmp5)) return;
+            rawRow.zaliczka = tmp5;
             rawRow.opis = tbx_usterka.Text;
             rawRow.user = loggedUser;
             rawRow.Zamkniete = false;
@@ -89,7 +111,18 @@ namespace ServiceDataBase
             this.Close();
         }
 
-        public RowZlecenia getRowZlecenia() { return rawRow; }
-        public bool getConfirmAction() { return confirmAction; }
+        public RowZlecenia getRowZlecenia() 
+        { 
+            return rawRow; 
+        }
+
+        public bool getConfirmAction() 
+        { 
+            return confirmAction; 
+        }
+
+
+
+
     }
 }

@@ -20,7 +20,7 @@
         <Label Content="Numer zlecenia" HorizontalAlignment="Left" Margin="165,18,0,0" VerticalAlignment="Top"/>
         <Label  Content="Rodzaj naprawy" HorizontalAlignment="Left" Margin="934,26,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbx_nazwisko" HorizontalAlignment="Left" Height="23" Margin="165,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label  Content="Nazwisko" HorizontalAlignment="Left" Margin="24,110,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Nazwisko/Nazwa" HorizontalAlignment="Left" Margin="24,110,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbx_miejscowosc" HorizontalAlignment="Left" Height="23" Margin="237,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox  x:Name="tbx_kodPocztowy" HorizontalAlignment="Left" Height="23" Margin="165,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
         <Label Content="Kod i miejscowość" HorizontalAlignment="Left" Margin="22,146,0,0" VerticalAlignment="Top"/>

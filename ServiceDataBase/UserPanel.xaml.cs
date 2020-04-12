@@ -35,7 +35,10 @@ namespace ServiceDataBase
             Timer.Tick += new EventHandler(Timer_Click);
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Start();
+            tableZlecenia.deserialize();
+            refreshDataGird();
         }
+
 
         /*
          * obsługa zdarzeń
@@ -47,7 +50,12 @@ namespace ServiceDataBase
         {
             AddNewOrder addNewOrder = new AddNewOrder(user.getLogin());
             addNewOrder.ShowDialog();
-            if (addNewOrder.getConfirmAction()) tableZlecenia.addRow(addNewOrder.getRowZlecenia());
+            if (addNewOrder.getConfirmAction())
+            {
+                tableZlecenia.addRow(addNewOrder.getRowZlecenia());
+                tableZlecenia.serialize();
+                refreshDataGird();
+            }
         }
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
@@ -88,12 +96,11 @@ namespace ServiceDataBase
          * inne metody
          */
 
-        void refreshDataGird()
+        private void refreshDataGird()
         {
-            foreach(TableZlecenia val in tableZlecenia)
-            {
-
-            }
+            List<RowZlecenia> tmpList = tableZlecenia.getTable();
+            dg_zlecenia.ItemsSource = null;
+            dg_zlecenia.ItemsSource = tmpList;
         }
 
         private void SetUserPermissions()
@@ -102,7 +109,6 @@ namespace ServiceDataBase
         }
 
         private void Timer_Click(object sender, EventArgs e)
-
         {
 
             DateTime d;

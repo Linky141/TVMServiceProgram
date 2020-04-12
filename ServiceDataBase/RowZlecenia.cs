@@ -6,81 +6,81 @@ using System.Threading.Tasks;
 
 namespace ServiceDataBase
 {
+
+    //klasa ze zmiennymi do tabeli ZLECENIA
+
     public class RowZlecenia
     {
+        public int numerZlecenia{ get; set; }
 
+        public string nazwisko{ get; set; }
 
-         public int numerZlecenia;
+        public string status{ get; set; }
 
-        public string nazwisko;
+        public double koszt{ get; set; }
 
-        public string status;
+        public string model{ get; set; }
 
-        public double koszt;
+        public string rodzajSprzetu{ get; set; }
 
-        public string model;
+        public string marka{ get; set; }
 
-        public string rodzajSprzetu;
+        public DateTime dataPrzyjecia{ get; set; }
 
-        public string marka;
+        public DateTime dataRozliczenia{ get; set; }
 
-        public DateTime dataPrzyjecia;
+        public DateTime dataOdbioru{ get; set; }
 
-        public DateTime dataRozliczenia;
+        public DateTime dataZakonczenia{ get; set; }
 
-        public DateTime dataOdbioru;
+        public double kosztRobocizny{ get; set; }
 
-        public DateTime dataZakonczenia;
+        public double kosztMaterialu{ get; set; }
 
-        public double kosztRobocizny;
+        public double kosztTransportu{ get; set; }
 
-        public double kosztMaterialu;
+        public string rodzajNaprawy{ get; set; }
 
-        public double kosztTransportu;
+        public string miejscowosc{ get; set; }
 
-        public string rodzajNaprawy;
+        public string kodPocztowy{ get; set; }
 
-        public string miejscowosc;
+        public string adres{ get; set; }
 
-        public string kodPocztowy;
+        public int nip{ get; set; }
 
-        public string adres;
+        public int telefon1{ get; set; }
 
-        public int nip;
+        public int telefon2{ get; set; }
 
-        public int telefon1;
+        public string email{ get; set; }
 
-        public int telefon2;
+        public string numerFabryczny{ get; set; }
 
-        public string email;
+        public DateTime godzinaPrzyjecia{ get; set; }
 
-        public string numerFabryczny;
+        public string numerRachunku{ get; set; }
 
-        public DateTime godzinaPrzyjecia;
+        public double zaliczka{ get; set; }
 
-        public string numerRachunku;
+        public string opis{ get; set; }
 
-        public double zaliczka;
+        public string user{ get; set; }
 
-        public string opis;
+        public bool Zamkniete{ get; set; }
 
-        public string user;
+        public bool przywoz{ get; set; }
 
-        public bool Zamkniete;
+        public bool pilot{ get; set; }
 
-        public bool przywoz;
-
-        public bool pilot;
-
-        public bool przewodZasilajacy;
+        public bool przewodZasilajacy{ get; set; }
     
-        public bool podstawa;
+        public bool podstawa{ get; set; }
 
-        public bool wieszak;
+        public bool wieszak{ get; set; }
 
-        public bool opakowanie;
+        public bool opakowanie{ get; set; }
 
-        public string uwagi;
-     
+        public string uwagi{ get; set; } 
     }
 }
